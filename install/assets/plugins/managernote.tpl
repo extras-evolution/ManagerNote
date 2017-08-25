@@ -2,16 +2,16 @@
 /**
  * ManagerNote
  *
- * Блокнот на главной
+ * Note for manager on dashboard
  *
  * @category    plugin
- * @version     1.1
+ * @version     1.2
  * @license     http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  * @package     modx
  * @author      Denissov (denissov@outlook.com) 
  * @internal    @events OnManagerWelcomeHome
  * @internal    @modx_category Manager and Admin
- * @internal    @properties  
+ * @internal    @properties  &position=Position on dashboard;text;20
  * @internal    @installset base
  * @internal    @disabled 0
  */
