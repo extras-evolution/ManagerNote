@@ -7,6 +7,7 @@ if (file_exists($plugin_path.'lang/' . $modx->config['manager_language'] . '.php
 }
 $e = &$modx->Event;
 if($e->name == 'OnManagerWelcomeHome'){
+	$position = isset($position) ? $position : 20;
 	$managerId = $_SESSION['mgrInternalKey'];
 	$res = $modx->db->select("note_text, time_add", $modx->getFullTableName('manager_note'),  "manager = $managerId", '', '1');  
     if($modx->db->getRecordCount($res) >= 1) {
@@ -22,7 +23,7 @@ if($e->name == 'OnManagerWelcomeHome'){
 	}
 	
 	 $widgets['managernote_widget'] = array(
-                                        'menuindex' =>'20',
+                                        'menuindex' => $position,
                                         'id' => 'managernote_widget',
                                         'cols' => 'col-sm-12',
                                         'icon' => 'fa-sticky-note',
@@ -54,11 +55,10 @@ if($e->name == 'OnManagerWelcomeHome'){
 
 		}
 	</script>
-	
+	<div class="card-body">
               <textarea id="managernoteContent" rows="9" style="width: 100%; margin-bottom: 10px; line-height: 16px;">'.$oldText.'</textarea>
-			  <a onclick="saveNote();" class="btn btn-default" style="cursor: pointer;" id="saveManagerNoteBtn"><i class="fa fa-save"></i> '.$_lang['btn_save'].'</a> <em class="lastTime">'.$lastTime.'</em> 
+			  <a onclick="saveNote();" class="btn" style="cursor: pointer;" id="saveManagerNoteBtn"><i class="fa fa-save"></i> '.$_lang['btn_save'].'</a> <em class="lastTime">'.$lastTime.'</em> </div>
          ');
-                $e->output(serialize($widgets));
 
-	
+                $e->output(serialize($widgets));
 }
