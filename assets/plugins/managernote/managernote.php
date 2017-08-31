@@ -8,6 +8,7 @@ if (file_exists($plugin_path.'lang/' . $modx->config['manager_language'] . '.php
 $e = &$modx->Event;
 if($e->name == 'OnManagerWelcomeHome'){
 	$position = isset($position) ? $position : 20;
+	$width = isset($width) ? $width : 12;
 	$managerId = $_SESSION['mgrInternalKey'];
 	$res = $modx->db->select("note_text, time_add", $modx->getFullTableName('manager_note'),  "manager = $managerId", '', '1');  
     if($modx->db->getRecordCount($res) >= 1) {
@@ -25,7 +26,7 @@ if($e->name == 'OnManagerWelcomeHome'){
 	 $widgets['managernote_widget'] = array(
                                         'menuindex' => $position,
                                         'id' => 'managernote_widget',
-                                        'cols' => 'col-sm-12',
+                                        'cols' => 'col-sm-'.$width,
                                         'icon' => 'fa-sticky-note',
                                         'title' => $_lang['pluginname'],
                                         'body' => '<script>
