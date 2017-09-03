@@ -58,7 +58,7 @@ if($e->name == 'OnManagerWelcomeHome'){
 	</script>
 	<div class="card-body">
               <textarea id="managernoteContent" rows="9" style="width: 100%; margin-bottom: 10px; line-height: 16px;">'.$oldText.'</textarea>
-			  <a onclick="saveNote();" class="btn" style="cursor: pointer;" id="saveManagerNoteBtn"><i class="fa fa-save"></i> '.$_lang['btn_save'].'</a> <em class="lastTime">'.$lastTime.'</em> </div>
+			  <a onclick="saveNote(); return false" class="btn btn-success" href="" id="saveManagerNoteBtn"><i class="fa fa-save"></i> '.$_lang['btn_save'].'</a> <em class="lastTime">'.$lastTime.'</em> </div>
          ');
 
                 $e->output(serialize($widgets));
