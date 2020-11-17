@@ -16,7 +16,7 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
     if (isset($_POST['action'])) {
         $action = $modx->db->escape($_POST['action']);
         switch ($action) {
-            case saveNote:
+            case 'saveNote':
 				$nowTime = time();
 				$noteText = trim($_POST['noteText']);
 				$managerId = $_SESSION['mgrInternalKey'];
