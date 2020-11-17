@@ -5,7 +5,7 @@
  * Note for manager on dashboard
  *
  * @category    plugin
- * @version     1.2.1
+ * @version     1.2.2
  * @license     http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
  * @package     modx
  * @author      Denissov (denissov@outlook.com) 
